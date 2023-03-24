@@ -1,0 +1,14 @@
+[
+  {
+    "remote": "github",
+    "repository":"SharkBoy69-CS/kernel_xiaomi_lavender",
+    "target_path":"kernel/xiaomi/lavender",
+    "branch":"lineage-20.0"
+  },
+  {
+    "remote":"github",
+    "repository":"SharkBoy69-CS/vendor_xiaomi_lavender",
+    "target_path":"vendor/xiaomi/lavender",
+    "branch": "lineage-20.0"
+  }
+]
