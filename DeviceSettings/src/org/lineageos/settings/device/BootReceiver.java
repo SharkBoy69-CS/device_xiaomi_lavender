@@ -21,47 +21,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.provider.Settings;
 
-import org.lineageos.settings.device.kcal.Utils;
 import org.lineageos.settings.device.preferences.SecureSettingSwitchPreference;
-import org.lineageos.settings.device.thermal.ThermalUtils;
 
 import java.lang.Math.*;
 
-public class BootReceiver extends BroadcastReceiver implements Utils {
+public class BootReceiver extends BroadcastReceiver {
 
     public static final  String EARPIECE_GAIN_PATH = "/sys/kernel/sound_control/earpiece_gain";
     public static final  String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
     public static final  String MIC_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
     
     public void onReceive(Context context, Intent intent) {
-
-        // KCAL
-        if (Settings.Secure.getInt(context.getContentResolver(), PREF_ENABLED, 0) == 1) {
-            FileUtils.setValue(KCAL_ENABLE, Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_ENABLED, 0));
-
-            String rgbValue = Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_RED, RED_DEFAULT) + " " +
-                    Settings.Secure.getInt(context.getContentResolver(), PREF_GREEN,
-                            GREEN_DEFAULT) + " " +
-                    Settings.Secure.getInt(context.getContentResolver(), PREF_BLUE,
-                            BLUE_DEFAULT);
-
-            FileUtils.setValue(KCAL_RGB, rgbValue);
-            FileUtils.setValue(KCAL_MIN, Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_MINIMUM, MINIMUM_DEFAULT));
-            FileUtils.setValue(KCAL_SAT, Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_GRAYSCALE, 0) == 1 ? 128 :
-                    Settings.Secure.getInt(context.getContentResolver(),
-                            PREF_SATURATION, SATURATION_DEFAULT) + SATURATION_OFFSET);
-            FileUtils.setValue(KCAL_VAL, Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_VALUE, VALUE_DEFAULT) + VALUE_OFFSET);
-            FileUtils.setValue(KCAL_CONT, Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_CONTRAST, CONTRAST_DEFAULT) + CONTRAST_OFFSET);
-            FileUtils.setValue(KCAL_HUE, Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_HUE, HUE_DEFAULT));
-        }
-        
+   
         // Audio Gain
         int gain = Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_HEADPHONE_GAIN, 0);
@@ -87,9 +58,6 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 DeviceSettings.PREF_KEY_FPS_INFO, 0) == 1;
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));
-
-        // Thermal
-        ThermalUtils.startService(context);
         }
     }
 }

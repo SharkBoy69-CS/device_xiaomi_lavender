@@ -122,10 +122,6 @@ vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
-# Bluetooth AptX - from crosshatch - QP1A.190711.020
-product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
-product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
-
 # Bluetooth - from LA.UM.8.2.r1-06700-sdm660.0
 lib/libbtconfigstore.so|b2765f77529c6bbad6eafc1e8b358ad9ce20d992
 lib64/libbtconfigstore.so|abbfd1a5e773fba69dccb3121861ef3fec2cdab9

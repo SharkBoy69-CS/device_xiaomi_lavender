@@ -23,7 +23,6 @@ import androidx.preference.PreferenceFragment;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 
-import org.lineageos.settings.device.kcal.KCalSettingsActivity;
 import org.lineageos.settings.device.speaker.ClearSpeakerActivity;
 import org.lineageos.settings.device.preferences.SecureSettingListPreference;
 import org.lineageos.settings.device.preferences.SecureSettingSwitchPreference;
@@ -38,7 +37,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String CATEGORY_VIBRATOR = "vibration";
     public static final String PREF_VIBRATION_STRENGTH = "vibration_strength";
-    public static final String VIBRATION_STRENGTH_PATH = "/sys/devices/virtual/timed_output/vibrator/vtg_level";
+    public static final String VIBRATION_STRENGTH_PATH = "/sys/module/qti_haptics/parameters/vmax_mv_override";
 
     public static final String CATEGORY_NOTIF = "notification_led";
     public static final String PREF_NOTIF_LED = "notification_led_brightness";
@@ -68,7 +67,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String CATEGORY_DISPLAY = "display";
     private static final String PREF_DEVICE_DOZE = "device_doze";
-    private static final String PREF_DEVICE_KCAL = "device_kcal";
 
     private static final String DEVICE_DOZE_PACKAGE_NAME = "com.advanced.settings.doze";
 
@@ -144,14 +142,6 @@ public class DeviceSettings extends PreferenceFragment implements
         //FPS Info
         SecureSettingSwitchPreference fpsInfo = (SecureSettingSwitchPreference) findPreference(PREF_KEY_FPS_INFO);
         fpsInfo.setOnPreferenceChangeListener(this);
-        // KCAL
-        Preference kcal = findPreference(PREF_DEVICE_KCAL);
-        kcal.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity().getApplicationContext(), KCalSettingsActivity.class);
-            startActivity(intent);
-            return true;
-        });
-
         // Dirac
         boolean enhancerEnabled;
         try {

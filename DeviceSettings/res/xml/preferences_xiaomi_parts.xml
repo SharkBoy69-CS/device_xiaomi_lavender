@@ -117,16 +117,7 @@
                 android:targetClass="com.advanced.settings.doze.DozeSettingsActivity"
                 android:targetPackage="com.advanced.settings.doze" />
         </Preference>
-        <Preference
-            android:key="device_kcal"
-            android:persistent="false"
-            android:title="@string/device_kcal_title"
-            android:icon="@drawable/ic_color">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="org.lineageos.settings.kcal.KCalSettingsActivity"
-                android:targetPackage="org.lineageos.settings.kcal" />
-        </Preference>
+       
         <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
             android:key="fps_info"
             android:icon="@drawable/ic_fps_info"
@@ -162,22 +153,6 @@
                 android:targetClass="com.xiaomi.parts.speaker.ClearSpeakerActivity"
                 android:targetPackage="com.xiaomi.parts.speaker" />
         </Preference>
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="thermal_category"
-        android:title="@string/thermal_root">
-
-        <Preference
-            android:icon="@drawable/ic_thermal"
-            android:title="@string/thermal_title"
-            android:summary="@string/thermal_summary">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="org.lineageos.settings.device.thermal.ThermalActivity"
-                android:targetPackage="org.lineageos.settings.device" />
-        </Preference>
-
     </PreferenceCategory>
 
 </PreferenceScreen>
