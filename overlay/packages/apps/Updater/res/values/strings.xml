@@ -18,5 +18,5 @@
           {type} - Build type
           {incr} - Incremental version
     -->
-    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/SharkBoy69-CS/Lineage_OTA/main/lavender.json</string>
+    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/SharkBoy69-CS/Lineage_OTA/master/lavender.json</string>
 </resources>
