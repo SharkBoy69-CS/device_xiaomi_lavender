@@ -71,6 +71,10 @@ USE_CUSTOM_AUDIO_POLICY := 0
 USE_DEVICE_SPECIFIC_AUDIO := true
 DEVICE_SPECIFIC_AUDIO_PATH := $(DEVICE_PATH)/qcom-caf/audio
 
+#Camera
+MALLOC_SVELTE := true
+MALLOC_SVELTE_FOR_LIBC32 := true
+
 # Compile libhwui in performance mode
 HWUI_COMPILE_FOR_PERF := true
 
