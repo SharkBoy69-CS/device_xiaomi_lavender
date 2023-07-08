@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
  * Copyright (c) 2006, The Android Open Source Project
- *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,6 +15,9 @@
 */
 -->
 <resources>
-    <dimen name="rounded_corner_radius">4dp</dimen>
-    <dimen name="rounded_corner_content_padding">35px</dimen>
+    <!-- for 20dp of padding at 2.75px/dp at default density -->
+    <dimen name="rounded_corner_content_padding">55px</dimen>
+
+    <!-- the padding on the top of the statusbar (usually 0) -->
+    <dimen name="status_bar_padding_top">1dp</dimen>
 </resources>
