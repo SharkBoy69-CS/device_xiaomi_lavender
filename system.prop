@@ -17,6 +17,19 @@ debug.sf.enable_hwc_vds=0
 # Dex
 dalvik.vm.dex2oat64.enabled=true
 
+# Logs
+persist.log.tag.AnalyticsService=S
+persist.log.tag.KernelCpuUidActiveTimeReader=S
+persist.log.tag.Tracer=S
+persist.log.tag.NearbySharing=S
+persist.log.tag.IntervalStats=S
+persist.log.tag.CompatibilityChangeReporter=S
+persist.log.tag.SQLiteLog=S
+persist.log.tag.wificond=S
+persist.log.tag.b/223498680=S
+persist.log.tag.TrafficStats=S
+persist.log.tag.ContrastColorUtil=S
+
 # Radio
 DEVICE_PROVISIONED=1
 ril.subscription.types=NV,RUIM
@@ -38,6 +51,3 @@ persist.audio.dirac.speaker=true
 persist.dirac.acs.controller=qem 
 persist.dirac.acs.ignore_error=1 
 persist.dirac.acs.storeSettings=1
-
-#Display 
-renderthread.skia.reduceopstasksplitting=true
